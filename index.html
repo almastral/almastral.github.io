@@ -382,49 +382,57 @@
             </div>
         </section>
 
-        <!-- Sección de contacto y comentarios -->
-        <section id="contacto" class="contact-section">
-            <div class="container">
-                <h2>Deja tu Testimonio</h2>
-                <p class="section-description">Comparte tu experiencia o déjame un mensaje. Tu opinión es importante para mí.</p>
-                
-                <!-- Formulario de comentarios con estrellas -->
-                <div class="comments-container">
-                    <div class="comment-form">
-                        <form id="starForm">
-                            <div class="form-group">
-                                <label for="name">Tu Nombre:</label>
-                                <input type="text" id="name" name="name" required placeholder="Escribe tu nombre">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label>Tu Calificación:</label>
-                                <div class="star-rating">
-                                    <input type="radio" id="star5" name="rating" value="5" required>
-                                    <label for="star5" title="Excelente"><i class="fas fa-star"></i></label>
-                                    <input type="radio" id="star4" name="rating" value="4">
-                                    <label for="star4" title="Muy Bueno"><i class="fas fa-star"></i></label>
-                                    <input type="radio" id="star3" name="rating" value="3">
-                                    <label for="star3" title="Bueno"><i class="fas fa-star"></i></label>
-                                    <input type="radio" id="star2" name="rating" value="2">
-                                    <label for="star2" title="Regular"><i class="fas fa-star"></i></label>
-                                    <input type="radio" id="star1" name="rating" value="1">
-                                    <label for="star1" title="Necesita Mejora"><i class="fas fa-star"></i></label>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="comment">Tu Comentario:</label>
-                                <textarea id="comment" name="comment" rows="5" required placeholder="Escribe tu comentario aquí..."></textarea>
-                            </div>
-                            
-                            <button type="submit" class="submit-btn">Enviar Testimonio</button>
-                        </form>
-                        <div id="formMessage" class="form-message"></div>
+<!-- Sección de contacto y comentarios -->
+<section id="contacto" class="contact-section">
+    <div class="container">
+        <h2>Deja tu Testimonio</h2>
+        <p class="section-description">Comparte tu experiencia con Alma Astral. Tu testimonio puede ayudar a otras personas en su camino de sanación.</p>
+        
+        <!-- Formulario de testimonios -->
+        <div class="comments-container">
+            <div class="comment-form">
+                <form action="https://formsubmit.co/mariposaalma80@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="Nuevo testimonio para Alma Astral">
+                    <input type="hidden" name="_next" value="https://almastral.github.io/gracias.html">
+                    <input type="hidden" name="_captcha" value="false">
+                    
+                    <div class="form-group">
+                        <label for="name">Tu Nombre:</label>
+                        <input type="text" id="name" name="name" required placeholder="Escribe tu nombre">
                     </div>
-                </div>
+                    
+                    <div class="form-group">
+                        <label>Tu Calificación:</label>
+                        <div class="star-rating">
+                            <input type="radio" id="star5" name="rating" value="⭐⭐⭐⭐⭐" required>
+                            <label for="star5" title="Excelente"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star4" name="rating" value="⭐⭐⭐⭐">
+                            <label for="star4" title="Muy Bueno"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star3" name="rating" value="⭐⭐⭐">
+                            <label for="star3" title="Bueno"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star2" name="rating" value="⭐⭐">
+                            <label for="star2" title="Regular"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star1" name="rating" value="⭐">
+                            <label for="star1" title="Necesita Mejora"><i class="fas fa-star"></i></label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="comment">Tu Comentario:</label>
+                        <textarea id="comment" name="comment" rows="5" required placeholder="Escribe tu comentario aquí..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Tu Email (opcional):</label>
+                        <input type="email" id="email" name="email" placeholder="Tu email para contactarte">
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Enviar Testimonio</button>
+                </form>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
     </main>
 
     <!-- Pie de página -->
