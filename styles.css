@@ -170,7 +170,7 @@ body {
 }
 
 .nav-container::-webkit-scrollbar {
-    height: 6px;
+    height: 6;
 }
 
 .nav-container::-webkit-scrollbar-track {
@@ -212,7 +212,7 @@ body {
     border-radius: 3px;
     transform: translateX(-50%);
     transition: var(--transition);
-    box-shadow: 0 0 8px rgba(212, 175, 55, 0.7);
+    box-shadow:  0 8px rgba(212, 175, 55, 0.7);
 }
 
 .nav-link:hover::after {
@@ -1435,5 +1435,4 @@ body {
     .whatsapp-button i {
         font-size: 1.4rem;
     }
-
 }
