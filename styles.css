@@ -142,7 +142,6 @@ body {
     animation-fill-mode: both;
     color: #e0d6ff;
 }
-
 /* ===== NAVEGACIÓN ===== */
 .navbar {
     position: fixed;
@@ -1354,4 +1353,5 @@ body {
     .whatsapp-button i {
         font-size: 1.4rem;
     }
+
 }
