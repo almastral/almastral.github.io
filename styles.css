@@ -153,6 +153,7 @@ body {
     z-index: 1000;
     box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
     padding: 8px 0;
+    height: 50px; /* Altura fija */
 }
 
 .nav-container {
@@ -162,20 +163,21 @@ body {
     justify-content: center;
     align-items: center;
     padding: 0 15px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    overflow-x: auto; /* Permite scroll horizontal */
+    -webkit-overflow-scrolling: touch; /* Suaviza scroll en iOS */
+    white-space: nowrap; /* Mantiene los enlaces en una línea */
 }
 
 .nav-link {
     color: var(--text-light);
     text-decoration: none;
-    margin: 0 12px;
+    margin: 0 10px;
     font-weight: 500;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     transition: var(--transition);
-    padding: 8px 16px;
+    padding: 8px 15px;
     border-radius: 25px;
-    white-space: nowrap;
+    white-space: nowrap; /* Evita que los textos se partan */
     position: relative;
 }
 
@@ -206,15 +208,17 @@ body {
 @media (max-width: 768px) {
     .navbar {
         padding: 6px 0;
+        height: 45px; /* Menos altura */
         backdrop-filter: blur(8px);
     }
     
     .nav-container {
         padding: 0 10px;
+        overflow-x: auto; /* Scroll horizontal si no caben */
     }
     
     .nav-link {
-        margin: 0 8px;
+        margin: 0 6px;
         font-size: 0.95rem;
         padding: 6px 12px;
     }
@@ -227,10 +231,11 @@ body {
 @media (max-width: 480px) {
     .navbar {
         padding: 5px 0;
+        height: 40px; /* Aún más compacto */
     }
     
     .nav-link {
-        margin: 0 6px;
+        margin: 0 4px;
         font-size: 0.9rem;
         padding: 5px 10px;
     }
