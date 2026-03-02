@@ -152,6 +152,7 @@ body {
     backdrop-filter: blur(12px);
     z-index: 1000;
     box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+    padding: 8px 0; /* REDUCIDO para móviles */
 }
 
 .nav-container {
@@ -159,18 +160,21 @@ body {
     margin: 0 auto;
     display: flex;
     justify-content: center;
-    padding: 18px 20px;
+    padding: 0 10px; /* REDUCIDO */
+    overflow-x: auto; /* Permite scroll horizontal si no caben los enlaces */
+    -webkit-overflow-scrolling: touch; /* Suaviza scroll en iOS */
 }
 
 .nav-link {
     color: var(--text-light);
     text-decoration: none;
-    margin: 0 18px;
+    margin: 0 10px; /* REDUCIDO */
     font-weight: 500;
-    font-size: 1.15rem;
+    font-size: 1.05rem; /* REDUCIDO */
     transition: var(--transition);
-    padding: 10px 20px;
-    border-radius: 30px;
+    padding: 8px 15px; /* REDUCIDO */
+    border-radius: 25px;
+    white-space: nowrap; /* Evita que los textos se partan */
     position: relative;
 }
 
@@ -194,7 +198,37 @@ body {
 }
 
 .nav-link:hover::after {
-    width: 80%;
+    width: 70%;
+}
+
+/* ===== MEDIA QUERIES PARA MÓVILES ===== */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 6px 0; /* AÚN MÁS COMPACTO */
+        backdrop-filter: blur(8px);
+    }
+    
+    .nav-link {
+        margin: 0 6px; /* MÁS CERCANOS */
+        font-size: 0.95rem; /* MÁS PEQUEÑO */
+        padding: 6px 12px; /* MÁS DELGADO */
+    }
+    
+    .nav-link::after {
+        height: 2px; /* MÁS DELGADO */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 5px 0; /* MÁXIMA COMPACTEZ */
+    }
+    
+    .nav-link {
+        margin: 0 4px;
+        font-size: 0.9rem;
+        padding: 5px 10px;
+    }
 }
 
 /* ===== CONTENEDOR PRINCIPAL ===== */
