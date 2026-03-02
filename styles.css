@@ -170,7 +170,7 @@ body {
 }
 
 .nav-container::-webkit-scrollbar {
-    height: 6;
+    height: 6px;
 }
 
 .nav-container::-webkit-scrollbar-track {
@@ -212,7 +212,7 @@ body {
     border-radius: 3px;
     transform: translateX(-50%);
     transition: var(--transition);
-    box-shadow:  0 8px rgba(212, 175, 55, 0.7);
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.7);
 }
 
 .nav-link:hover::after {
@@ -247,6 +247,13 @@ body {
     .nav-link::after {
         height: 1.5px;
     }
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
 }
 
 /* ===== SECCIÓN DE INTRODUCCIÓN ===== */
@@ -1133,84 +1140,6 @@ body {
     border: 1px solid rgba(231, 76, 60, 0.3);
 }
 
-/* ===== LISTA DE COMENTARIOS ===== */
-.comments-list {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 35px;
-    border-radius: 22px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-    border: 1px solid rgba(155, 89, 182, 0.15);
-}
-
-.comments-list h3 {
-    font-size: 1.9rem;
-    color: var(--primary-color);
-    margin-bottom: 25px;
-    text-align: center;
-    padding-bottom: 15px;
-    border-bottom: 2px solid rgba(155, 89, 182, 0.2);
-}
-
-#commentsDisplay {
-    max-height: 400px;
-    overflow-y: auto;
-    padding-right: 10px;
-}
-
-.comment-item {
-    background: rgba(248, 245, 255, 0.6);
-    padding: 25px;
-    border-radius: 16px;
-    margin-bottom: 20px;
-    border-left: 4px solid var(--primary-color);
-    transition: var(--transition);
-}
-
-.comment-item:hover {
-    background: rgba(248, 245, 255, 0.8);
-    transform: translateX(5px);
-}
-
-.comment-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
-}
-
-.comment-author {
-    font-weight: 700;
-    color: var(--text-dark);
-    font-size: 1.2rem;
-}
-
-.comment-rating {
-    color: #f39c12;
-    font-size: 1.3rem;
-}
-
-.comment-text {
-    font-style: italic;
-    color: var(--text-dark);
-    line-height: 1.7;
-    font-size: 1.05rem;
-}
-
-.comment-date {
-    font-size: 0.9rem;
-    color: #777;
-    margin-top: 10px;
-    text-align: right;
-    font-style: normal;
-}
-
-.no-comments {
-    text-align: center;
-    color: #888;
-    font-style: italic;
-    padding: 30px;
-}
-
 /* ===== PIE DE PÁGINA ===== */
 .footer {
     background: rgba(20, 10, 40, 0.92);
@@ -1300,12 +1229,12 @@ body {
         font-size: 1.5rem;
     }
     
-    .section-box, .intro-section, .about-section, .benefits-section, 
+    .intro-section, .about-section, .benefits-section, 
     .protocols-section, .testimonials-section, .payment-section, .contact-section {
         padding: 45px 35px;
     }
     
-    .section-box h2, .intro-section h2, .about-section h2, 
+    .intro-section h2, .about-section h2, 
     .benefits-section h2, .protocols-section h2, .testimonials-section h2,
     .payment-section h2, .contact-section h2 {
         font-size: 2.4rem;
@@ -1337,24 +1266,13 @@ body {
         font-size: 1.4rem;
     }
     
-    .nav-container {
-        flex-direction: column;
-        gap: 12px;
-    }
-    
-    .nav-link {
-        margin: 5px 0;
-        padding: 10px 25px;
-        font-size: 1.1rem;
-    }
-    
-    .section-box, .intro-section, .about-section, .benefits-section, 
+    .intro-section, .about-section, .benefits-section, 
     .protocols-section, .testimonials-section, .payment-section, .contact-section {
         padding: 40px 25px;
         margin-bottom: 55px;
     }
     
-    .section-box h2, .intro-section h2, .about-section h2, 
+    .intro-section h2, .about-section h2, 
     .benefits-section h2, .protocols-section h2, .testimonials-section h2,
     .payment-section h2, .contact-section h2 {
         font-size: 2.1rem;
@@ -1396,13 +1314,13 @@ body {
         font-size: 1.3rem;
     }
     
-    .section-box, .intro-section, .about-section, .benefits-section, 
+    .intro-section, .about-section, .benefits-section, 
     .protocols-section, .testimonials-section, .payment-section, .contact-section {
         padding: 35px 20px;
         margin-bottom: 50px;
     }
     
-    .section-box h2, .intro-section h2, .about-section h2, 
+    .intro-section h2, .about-section h2, 
     .benefits-section h2, .protocols-section h2, .testimonials-section h2,
     .payment-section h2, .contact-section h2 {
         font-size: 1.9rem;
