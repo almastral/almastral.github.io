@@ -142,7 +142,7 @@ body {
     color: #e0d6ff;
 }
 
-/* ===== NAVEGACIÓN - AJUSTE FINAL ===== */
+/* ===== NAVEGACIÓN ===== */
 .navbar {
     position: fixed;
     top: 0;
@@ -150,7 +150,8 @@ body {
     width: 100%;
     background: rgba(80, 40, 120, 0.97);
     backdrop-filter: blur(12px);
-    z-index: 100 box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
     padding: 0;
     height: 50px;
 }
@@ -161,22 +162,24 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 0 10px; /* Ajuste aquí */
+    padding: 0 10px;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
-    scrollbar-color: rgba(255 255, 255, 0.3) transparent;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
 }
 
-/* Añade para que el desplazamiento comience desde el principio */
-.nav-container {
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
+.nav-container::-webkit-scrollbar {
+    height: 6px;
 }
 
-/* Asegura que el primer enlace esté visible */
-.nav-container {
-    scroll-snap-align: start;
+.nav-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.nav-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
 }
 
 .nav-link {
@@ -193,6 +196,29 @@ body {
     flex-shrink: 0;
 }
 
+.nav-link:hover, .nav-link.active {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--gold-color);
+    border-radius: 3px;
+    transform: translateX(-50%);
+    transition: var(--transition);
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.7);
+}
+
+.nav-link:hover::after {
+    width: 60%;
+}
+
 /* ===== MEDIA QUERIES PARA MÓVILES ===== */
 @media (max-width: 768px) {
     .navbar {
@@ -203,7 +229,8 @@ body {
     .nav-link {
         margin: 0 6px;
         font-size: 0.85rem;
-        padding: 10px 8px }
+        padding: 10px 8px;
+    }
 }
 
 @media (max-width: 480px) {
