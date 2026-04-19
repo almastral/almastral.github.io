@@ -1356,3 +1356,56 @@ summary::after {
     }
 
 }
+
+/* BLOQUE DE ACTUALIZACIÓN  */
+
+/* La nueva tipografía en toda la web */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif !important;
+}
+
+body, p, li, summary, .nav-link {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+/* 2. Estilo místico para los acordeones */
+.acordeon-item {
+    background: rgba(40, 20, 60, 0.7); /* Fondo traslúcido oscuro */
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 12px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.acordeon-item[open] {
+    border-color: var(--gold-color);
+    background: rgba(40, 20, 60, 0.9);
+}
+
+summary {
+    padding: 20px;
+    color: var(--text-light);
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+summary::after {
+    content: '✦'; /* Icono sagrado */
+    color: var(--gold-color);
+}
+
+.contenido {
+    padding: 0 25px 25px;
+    color: #f1eaff;
+}
+
+.contenido li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 0;
+}
