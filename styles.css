@@ -15,6 +15,9 @@
     --box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
     --transition: all 0.4s ease;
 }
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif !important; /* Letra elegante para títulos */
+}
 
 * {
     margin: 0;
@@ -23,7 +26,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Montserrat', sans-serif !important; /* Cambio de letra global */
     line-height: 1.7;
     color: var(--text-dark);
     background: transparent;
@@ -624,74 +627,72 @@ body {
     border-left: 3px solid #e74c3c;
 }
 
-/* ===== TRATAMIENTOS ===== */
+/* ===== SECCIÓN TRATAMIENTOS (ACORDEÓN MÍSTICO) ===== */
 .treatments-section {
     margin-top: 60px;
-    padding-top: 40px;
+    padding: 40px 0;
     border-top: 2px dashed rgba(155, 89, 182, 0.3);
 }
 
-.treatments-section h3 {
-    font-size: 2.1rem;
-    color: var(--primary-color);
-    text-align: center;
-    margin-bottom: 30px;
-    position: relative;
+.acordeon-item {
+    background: rgba(40, 20, 60, 0.75); /* Fondo místico traslúcido */
+    backdrop-filter: blur(8px); /* Desenfoque sobre el video */
+    border: 1px solid rgba(212, 175, 55, 0.3); /* Borde dorado fino */
+    border-radius: 12px;
+    margin-bottom: 12px;
+    transition: var(--transition);
+    overflow: hidden;
 }
 
-.treatments-section h3::after {
-    content: '';
-    position: absolute;
-    bottom: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 70px;
-    height: 3px;
-    background: var(--gold-color);
-    border-radius: 2px;
+.acordeon-item[open] {
+    border-color: var(--gold-color);
+    box-shadow: 0 0 15px rgba(155, 89, 182, 0.3);
 }
 
-.treatments-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    max-width: 1000px;
-    margin: 0 auto;
+summary {
+    padding: 20px 25px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-light);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    outline: none;
 }
 
-.treatments-list ul {
+/* Icono de estrella/chispa dorada */
+summary::after {
+    content: '✦';
+    color: var(--gold-color);
+    font-size: 1rem;
+    transition: transform 0.3s;
+}
+
+.acordeon-item[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.contenido {
+    padding: 0 25px 25px;
+    color: #f1eaff;
+}
+
+.contenido ul {
     list-style: none;
     padding: 0;
-    columns: 2;
-    column-gap: 30px;
 }
 
-.treatments-list li {
+.contenido li {
     margin-bottom: 10px;
-    padding-left: 22px;
-    position: relative;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 1.05rem;
-    line-height: 1.6;
 }
 
-.treatments-list li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: var(--secondary-color);
-    font-size: 1.4rem;
-    line-height: 1;
-}
-
-.treatments-note {
-    text-align: center;
-    margin-top: 30px;
-    font-style: italic;
-    color: #666;
-    font-size: 1.1rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+.contenido li strong {
+    color: var(--gold-light); /* Resalta los títulos internos en dorado claro */
 }
 
 /* ===== SECCIÓN DE TESTIMONIOS ===== */
