@@ -1357,55 +1357,107 @@ summary::after {
 
 }
 
-/* BLOQUE DE ACTUALIZACIÓN  */
+/* ===== ACORDEÓN  REFINADO ===== */
 
-/* La nueva tipografía en toda la web */
+/* Tipografía  */
 h1, h2, h3 {
     font-family: 'Playfair Display', serif !important;
 }
 
-body, p, li, summary, .nav-link {
+body, p, li, summary, .nav-link, .contenido {
     font-family: 'Montserrat', sans-serif !important;
 }
 
-/* 2. Estilo místico para los acordeones */
+/* Estilo del Acordeón */
 .acordeon-item {
-    background: rgba(40, 20, 60, 0.7); /* Fondo traslúcido oscuro */
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    border-radius: 12px;
-    margin-bottom: 12px;
+    background: var(--overlay-purple); /* Usa tu color de marca */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.3); /* Borde oro sutil */
+    border-radius: 18px; /* Redondeado elegante como tus cards */
+    margin-bottom: 15px;
     overflow: hidden;
     transition: var(--transition);
 }
 
-.acordeon-item[open] {
-    border-color: var(--gold-color);
-    background: rgba(40, 20, 60, 0.9);
+/* Efecto al estar abierto o pasar el mouse */
+.acordeon-item:hover {
+    border-color: rgba(212, 175, 55, 0.6);
 }
 
+.acordeon-item[open] {
+    border-color: var(--gold-color);
+    box-shadow: var(--gold-glow); /* Brillo místico */
+    background: rgba(40, 20, 60, 0.9); /* Un poco más oscuro al abrir */
+}
+
+/* Estilo del Título */
 summary {
-    padding: 20px;
+    padding: 22px 28px;
     color: var(--text-light);
-    font-weight: 600;
+    font-weight: 500;
+    font-size: 1.15rem;
+    letter-spacing: 0.8px;
     cursor: pointer;
     list-style: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: var(--transition);
 }
 
+summary::-webkit-details-marker {
+    display: none; /* Quita la flecha fea de los navegadores */
+}
+
+/* El icono con animación */
 summary::after {
-    content: '✦'; /* Icono sagrado */
+    content: '✦'; 
     color: var(--gold-color);
+    font-size: 1.1rem;
+    transition: transform 0.4s ease, text-shadow 0.4s ease;
 }
 
+.acordeon-item[open] summary::after {
+    transform: rotate(180deg) scale(1.3);
+    text-shadow: 0 0 10px var(--gold-color);
+}
+
+/* Estilo del Contenido Interno */
 .contenido {
-    padding: 0 25px 25px;
+    padding: 5px 30px 30px 30px;
     color: #f1eaff;
+    line-height: 1.8;
+    animation: fadeIn 0.6s ease;
+}
+
+.contenido ul {
+    list-style: none;
+    padding: 0;
 }
 
 .contenido li {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 10px 0;
+    padding: 12px 0;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+}
+
+/* Detalle de viñeta dorada */
+.contenido li::before {
+    content: '✧';
+    color: var(--gold-color);
+    margin-right: 12px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.contenido li:last-child {
+    border-bottom: none;
+}
+
+.contenido li strong {
+    color: var(--gold-light);
+    font-weight: 600;
 }
