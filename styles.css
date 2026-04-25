@@ -18,13 +18,11 @@
 h1, h2, h3 {
     font-family: 'Playfair Display', serif !important; /* Letra elegante para títulos */
 }
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Montserrat', sans-serif !important; /* Cambio de letra global */
     line-height: 1.7;
@@ -32,7 +30,6 @@ body {
     background: transparent;
     overflow-x: hidden;
 }
-
 /* ===== VIDEO DE FONDO ===== */
 .video-container {
     position: fixed;
@@ -42,7 +39,6 @@ body {
     height: 100%;
     z-index: -2;
 }
-
 .bg-video {
     position: absolute;
     top: 50%;
@@ -55,7 +51,6 @@ body {
     object-fit: cover;
     filter: blur(2px);
 }
-
 .overlay {
     position: absolute;
     top: 0;
@@ -65,7 +60,6 @@ body {
     background: var(--overlay-purple);
     z-index: -1;
 }
-
 /* ===== CABECERA ===== */
 .header {
     position: relative;
@@ -77,13 +71,11 @@ body {
     background: #28143c;
     overflow: hidden;
 }
-
 .header-content {
     position: relative;
     width: 100%;
     height: 100%;
 }
-
 .header-video {
     position: absolute;
     top: 0;
@@ -94,7 +86,6 @@ body {
     object-position: center;
     opacity: 0.9;
 }
-
 .header-overlay {
     position: absolute;
     top: 0;
@@ -110,7 +101,6 @@ body {
     padding: 20px;
     color: var(--text-light);
 }
-
 .header-overlay h1 {
     font-size: 4.2rem;
     margin-bottom: 45px; /* ¡MÁS SEPARADO! */
