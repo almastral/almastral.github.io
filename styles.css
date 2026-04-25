@@ -323,8 +323,8 @@ body {
     background: var(--box-bg);
     border-radius: 28px;
     box-shadow: var(--box-shadow);
-    padding: 60px 80px;
-    margin-bottom: 80px;
+    padding: 40px 30px; /* Reducido para que no sea tan largo */
+    margin-bottom: 40px; /* Reducido de 80px */
     position: relative;
     border-left: 6px solid var(--secondary-color);
 }
@@ -398,23 +398,21 @@ body {
 }
 
 .benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 35px;
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 20px;
     max-width: 1100px;
     margin: 0 auto;
 }
 
 .benefit-card {
+    flex: 1 1 300px; 
+    max-width: 340px; 
     background: rgba(255, 255, 255, 0.85);
     border-radius: 22px;
-    padding: 35px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-    transition: var(--transition);
+    padding: 30px;
     text-align: center;
-    border: 1px solid rgba(155, 89, 182, 0.15);
-    position: relative;
-    overflow: hidden;
 }
 
 .benefit-card::before {
