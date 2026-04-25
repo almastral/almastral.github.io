@@ -264,8 +264,10 @@ body {
     background: var(--box-bg-alt);
     border-radius: 28px;
     box-shadow: var(--box-shadow);
-    margin: -40px auto 80px;
-    padding: 65px 80px;
+    /* Reducimos el margen inferior de 80px a 40px */
+    margin: -30px auto 40px; 
+    /* Reducimos el padding de 65px/80px a 40px/30px */
+    padding: 40px 30px; 
     position: relative;
     border: 2px solid rgba(155, 89, 182, 0.15);
 }
@@ -281,9 +283,9 @@ body {
 }
 
 .intro-section h2 {
-    font-size: 2.6rem;
+    font-size: 2.4rem; /* Un poco más pequeño para ahorrar espacio */
     color: var(--primary-color);
-    margin-bottom: 30px;
+    margin-bottom: 20px; /* Reducido de 30px a 20px */
     text-align: center;
     position: relative;
 }
@@ -291,7 +293,7 @@ body {
 .intro-section h2::after {
     content: '';
     position: absolute;
-    bottom: -15px;
+    bottom: -10px; /* Más cerca del texto */
     left: 50%;
     transform: translateX(-50%);
     width: 80px;
@@ -303,17 +305,17 @@ body {
 
 .intro-content {
     text-align: center;
-    font-size: 1.25rem;
-    line-height: 1.9;
+    font-size: 1.15rem; /* Un toque más pequeño */
+    line-height: 1.6; /* Interlineado más apretado (antes 1.9) */
     color: var(--text-dark);
-    max-width: 900px;
+    max-width: 850px;
     margin: 0 auto;
 }
 
 .intro-content p {
-    margin-bottom: 25px;
+    margin-bottom: 15px; /* Reducido de 25px a 15px */
     position: relative;
-    padding: 15px 0;
+    padding: 10px 0;
 }
 
 .intro-content p::after {
@@ -322,7 +324,7 @@ body {
     width: 60px;
     height: 2px;
     background: var(--secondary-color);
-    margin: 25px auto 0;
+    margin: 15px auto 0; /* Espacio de cierre más corto */
     opacity: 0.3;
 }
 
@@ -626,33 +628,33 @@ body {
     font-size: 0.95rem;
     border-left: 3px solid #e74c3c;
 }
-
-/* ===== SECCIÓN TRATAMIENTOS (ACORDEÓN MÍSTICO) ===== */
+/* ===== SECCIÓN TRATAMIENTOS (ACORDEÓN) ===== */
 .treatments-section {
-    margin-top: 60px;
-    padding: 40px 0;
+    margin-top: 40px; /* Reducido de 60px para compactar */
+    padding: 30px 0;
     border-top: 2px dashed rgba(155, 89, 182, 0.3);
 }
 
 .acordeon-item {
-    background: rgba(40, 20, 60, 0.75); /* Fondo místico traslúcido */
-    backdrop-filter: blur(8px); /* Desenfoque sobre el video */
-    border: 1px solid rgba(212, 175, 55, 0.3); /* Borde dorado fino */
-    border-radius: 12px;
-    margin-bottom: 12px;
+    background: var(--overlay-purple); /* Usamos tu púrpura místico */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 18px; /* Redondeado como las tarjetas de beneficios */
+    margin-bottom: 15px;
     transition: var(--transition);
     overflow: hidden;
 }
 
 .acordeon-item[open] {
     border-color: var(--gold-color);
-    box-shadow: 0 0 15px rgba(155, 89, 182, 0.3);
+    box-shadow: var(--gold-glow); /* Brillo dorado de tu marca */
+    background: rgba(40, 20, 60, 0.9);
 }
 
 summary {
-    padding: 20px 25px;
+    padding: 18px 25px; /* Más compacto */
     font-size: 1.15rem;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--text-light);
     cursor: pointer;
     list-style: none;
@@ -662,37 +664,50 @@ summary {
     outline: none;
 }
 
-/* Icono de estrella/chispa dorada */
+summary::-webkit-details-marker {
+    display: none; /* Quita la flecha por defecto */
+}
+
 summary::after {
     content: '✦';
     color: var(--gold-color);
-    font-size: 1rem;
-    transition: transform 0.3s;
+    font-size: 1.1rem;
+    transition: transform 0.4s ease, text-shadow 0.4s ease;
 }
 
 .acordeon-item[open] summary::after {
-    transform: rotate(180deg);
+    transform: rotate(180deg) scale(1.2);
+    text-shadow: 0 0 10px var(--gold-color);
 }
 
 .contenido {
-    padding: 0 25px 25px;
+    padding: 0 30px 25px;
     color: #f1eaff;
-}
-
-.contenido ul {
-    list-style: none;
-    padding: 0;
+    line-height: 1.6;
 }
 
 .contenido li {
-    margin-bottom: 10px;
-    padding-bottom: 8px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 1.05rem;
+    padding: 10px 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+/* Detalle místico: estrella antes de cada ítem */
+.contenido li::before {
+    content: '✧';
+    color: var(--gold-color);
+    margin-right: 12px;
+    font-size: 0.9rem;
+}
+
+.contenido li:last-child {
+    border-bottom: none;
 }
 
 .contenido li strong {
-    color: var(--gold-light); /* Resalta los títulos internos en dorado claro */
+    color: var(--gold-light);
 }
 
 /* ===== SECCIÓN DE TESTIMONIOS ===== */
